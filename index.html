@@ -1,0 +1,175 @@
+<html>
+<head>
+	<title>CIP.FUN</title>
+	<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Montserrat:400,900'  type='text/css'>
+	<link rel="stylesheet" href="css/font-awesome.min.css">
+	<meta name="author" content="Ciprian Ionescu">
+	<meta name="description" content="A home for all of the fun things I do.">
+	<meta name="keywords" content="cip ciprian ionescu ciprian2012ionescu fun cip.fun chippy chippydippy cirip ">
+	<meta name=viewport content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<meta name="theme-color" content="#333">
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha256-k2WSCIexGzOj3Euiig+TlR8gA0EmPjuc79OEeY5L45g=" crossorigin="anonymous"></script>
+	<style type="text/css">
+		html, body {
+			margin: 0;
+			height: 100%;
+			//overflow: hidden;
+		}
+		body {
+			background-color: #333;
+		}
+		#p2 {
+			position: absolute;
+			display: flex;
+			align-items: center;
+			top: 100%;
+			height: 100%;
+			width: 100%;
+		}
+		#skew {
+			display: flex;
+			align-items: center;
+			justify-content: flex-end;
+			width: 55%;
+			height: 100%;
+			background-color: #FFF;
+			//transform: skew(-30deg);
+			clip-path: polygon(0% 0%, 0% 100%, 75% 100%, 100% 25%);
+			shape-outside: polygon(0% 0%, 0% 100%, 75% 100%, 100% 25%);
+			float: left;
+			z-index: 1;
+			transition: all 0.2s;
+		}
+		#skew.scroll {
+			position: fixed;
+			justify-content: center;
+			top: 0%;
+			width: 15vh;
+			height: 10vh;
+			clip-path: polygon(90% 0%, 0% 0%, 0% 90%, 100% 100%);
+			shape-outside: polygon(25% 0%, 0% 0%, 0% 10%, 20% 15%);
+		}
+		#title {
+			font-size: 10vw;
+			font-family: 'Montserrat', sans-serif;
+			font-weight: 900;
+			letter-spacing: 15px;
+			margin-right: calc(20% - 25px);
+			color: #333;
+			z-index: 2;
+			transition: all 0.2s;
+		}
+		#title.scroll {
+			font-size: 4vh;
+			letter-spacing: 10px;
+		}
+		#fun {
+			font-size: 10vw;
+			font-family: 'Montserrat', sans-serif;
+			font-weight: 900;
+			letter-spacing: 15px;
+			color: white;
+			z-index: 2;
+		}
+		#right {
+			display: flex;
+			align-items: center;
+			justify-content: flex-start;
+			height: 100%;
+			width: 45%;
+			float: right;
+		}
+		#dot {
+			position: absolute;
+			top: calc(50% - 0px);
+			left: calc(50% - 1.5vw);
+			border-radius: 50%;
+			height: 3vw;
+			width: 3vw;
+			background-color: white;
+			z-index: 0;
+		}
+		#dot2 {
+			position: absolute;
+			top: calc(50% - 0px);
+			left: calc(50% - 1.5vw);
+			border-radius: 50%;
+			height: 3vw;
+			width: 3vw;
+			background-color: #333;
+			z-index: 3;
+		}
+		p {
+			color: white;
+			text-align: justify;
+			padding: 10px;
+			word-wrap: break-word;
+			font-family: 'Montserrat', sans-serif;
+		}
+		#buttons {
+			position: absolute;
+			bottom: 0%;
+			width: 100%;
+			text-align: left;
+			z-index: 10;
+		}
+		.btn {
+			display: inline-block;
+			padding: 15px;
+			text-transform: uppercase;
+			font-size: 18px;
+			font-weight: 700;
+			color: #333;
+			text-decoration: none;
+			-webkit-tap-highlight-color: rgba(0,0,0,0);
+			-webkit-transition: all 0.2s;
+			-moz-transition: all 0.2s;
+			-o-transition: all 0.2s;
+			transition: all 0.2s;
+		}
+		.btn:hover {
+			color: #888;
+			text-shadow: 0px 10px 20px #AAA;
+		}
+		.btn:active {
+			color: #222;
+			text-shadow: 0px 5px 10px #BBB;
+			transform: translateY(1px);
+		}
+		@media only screen and (max-width: 568px) {
+			#skew {
+				clip-path: polygon(0% 20%, 0% 100%, 15% 100%, 100% 45%);
+			}
+			#buttons {
+				text-align: center;
+			}
+			.btn {
+				color: #FFF;
+			}
+			.btn:hover {
+				color: #DDD;
+				text-shadow: 0px 10px 20px #000;
+			}
+			.btn:active {
+				color: #CCC;
+				text-shadow: 0px 5px 10px #111;
+				transform: translateY(1px);
+			}
+		}
+
+	</style>
+	<!--<script type="text/javascript" src="main.js"></script>-->
+	<script type="text/javascript" src="mutationobserver.js"></script>
+</head>
+<body>
+	<div id="dot" class="dots"></div>
+	<div id="skew"><span id="title">CIP</span><div id="dot2" class="dots"></div></div>
+	<div id="right"><span id="fun">FUN</span></div>
+	<div id="buttons">
+		<a href="https://t.me/putulica" class="fa fa-telegram fa-3x btn" aria-hidden="true"></a>
+		<a href="https://github.com/CiRIP" class="fa fa-github-alt fa-3x btn" aria-hidden="true"></a>
+		<a href="https://google.com/+CiprianIonescuDev" class="fa fa-google-plus fa-3x btn" aria-hidden="true"></a>
+		<a href="mailto:ciprian2012ionescu@gmail.com" class="fa fa-envelope fa-3x btn" aria-hidden="true"></a>
+	</div>
+</body>
+</html>
